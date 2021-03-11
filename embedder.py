@@ -8,7 +8,7 @@ class Nnet(nn.Module):
 
     def forward(self, x):
         x = x.permute(0, 2, 1)
-        x, _ = self.encoder(x)
+        x, _ = self.Nnet(x)
         if x.dim() == 3:
             x = self.linear(x[:, -1, :])
         else:
